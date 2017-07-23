@@ -1,4 +1,5 @@
 
+var prototypes = require("prototypes");
 
 //define node module that exports a constructor for creating cloze-deletion flashcards
 // module.exports = ClozeCard;
@@ -15,6 +16,8 @@ var BigFive = "The Big Five inlcude Apple, Alphabet, Microsoft, Amazon, Facebook
 var AIleader = "China is the AI research leader of the world";
 var hyperLoopOne = "Ellon Musk initiated funding for the Hyperloop One, Mode of transportation moving high speed vehicles through low pressure tubes";
 var ClozeError = "Oops this does not work";
+
+
 //the constructed object should have a 'cloze' property that contains _only_
 //the cloze-deletion portion of text
 //the constructued object should have a 'partial' property that contains _only_  the partial text
@@ -48,6 +51,11 @@ console.log("Full Text: "+thehyperLoopOne.fullText);
 
 console.log("Error: "+brokenCloze.fullText);
 
+var userInput = "CHINA";
 
+var AIchina = theAIleader.cloze;
+
+var check = AIchina.containsIgnoreCase(userInput);
+console.log("User Input is: "+check);
 // // Should throw or log an error because "oops" doesn't appear in "This doesn't work"
 // var brokenCloze = new ClozeCard("This doesn't work", "oops"
